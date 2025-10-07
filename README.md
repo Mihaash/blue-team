@@ -136,6 +136,15 @@ Example columns:
 
 ---
 
+# Example Output of `ps aux`
+
+```bash
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1 169276  1056 ?        Ss   10:30   0:02 /sbin/init
+kali      1523  1.2  2.5 233456 20320 ?        Sl   10:31   0:05 /usr/bin/firefox
+kali      1900  0.0  0.3  21344  3024 pts/0    R+   10:35   0:00 ps aux
+```
+
 # Network Discovery Tools
 
 ## Nuclei
