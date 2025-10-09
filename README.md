@@ -1,8 +1,6 @@
 # blue-team
 # Blue-Team Tools & Networking Cheat Sheet
 
-A comprehensive Markdown reference covering blue-team tools, networking basics, SOC operations, Linux commands, pentesting commands (for understanding attacker techniques), and OWASP Top 10 (2021). Use this for study, SOC playbooks, or to build internal documentation.
-
 ---
 
 ## Table of Contents
@@ -207,7 +205,61 @@ Ultra-fast Internet-scale port scanner for discovering open ports across very la
 
 * **WhatWeb** — Fingerprints web technologies (web server, CMS, frameworks, JS libs, analytics, plugins).
 
+# linEnum
+- **System & kernel info**
+  - `uname`, kernel version, distribution, OS info
+
+- **User accounts & groups**
+  - user list, UIDs/GIDs, login history, last logins
+
+- **Home directories & file permissions**
+  - home paths, world-writable files, permissive permissions
+
+- **SUID / SGID & suspicious binaries**
+  - setuid/setgid files, potentially exploitable binaries
+
+- **Services & network**
+  - running services, listening/open ports, network interfaces, routing table
+
+- **Processes & daemons**
+  - running processes and their owners
+
+- **Scheduled tasks**
+  - cron jobs, `/etc/crontab`, systemd timers
+
+- **Installed packages & package managers**
+  - package lists (apt/rpm/etc.), installed software versions
+
+- **Useful files & credentials**
+  - private keys, config files, credentials found in files or history
+
+- **sudo privileges**
+  - `sudo -l` results — who can run what (passwordless entries)
+
+- **Environment & PATH issues**
+  - environment variables, PATH misconfigurations, insecure paths
+
+- **Potential CVE / exploit hints**
+  - version-based hints for known local exploits (informational)
+
+
 ---
+
+# linux-exploit-suggester — quick overview
+
+**linux-exploit-suggester** is a local enumeration helper that **matches the target kernel / distro / package versions against a database of public local exploits** and returns a prioritized list of potential local privilege-escalation or kernel exploits.  
+It does **not** exploit anything by itself — it only suggests which publicly-known exploits might apply to the system you're analyzing, so you can investigate further.
+
+---
+
+## What it does
+- Detects OS, kernel version, libc/version strings, and other identifying info.
+- Compares those versions against an internal exploits database (or an extracted database).
+- Outputs a list of exploit suggestions (exploit name, affected versions, severity/notes, and often a link or CVE ID).
+- May also display quick checks to see if an exploit is likely to succeed (e.g., outdated kernel config flags).
+
+---
+
 
 # Vulnerability Scanners Comparison
 
