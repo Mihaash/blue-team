@@ -143,6 +143,30 @@ kali      1523  1.2  2.5 233456 20320 ?        Sl   10:31   0:05 /usr/bin/firefo
 kali      1900  0.0  0.3  21344  3024 pts/0    R+   10:35   0:00 ps aux
 ```
 
+# Linux User & Permissions Reference
+
+## Example User Entry: root
+
+| Field    | Value   | Meaning                                  |
+|----------|--------|-----------------------------------------|
+| username | root   | The user account name                    |
+| password | x      | Placeholder; actual password is in `/etc/shadow` |
+| UID      | 0      | User ID 0 (root user)                   |
+| GID      | 0      | Group ID 0 (root group)                 |
+| comment  | root   | Full name or description                |
+| home     | /root  | Home directory for the user             |
+| shell    | /bin/bash | Login shell                            |
+
+---
+
+## Permission Types
+
+| Permission | Symbol | Meaning                                                                 |
+|------------|--------|-------------------------------------------------------------------------|
+| Read       | r      | Allows viewing the contents of a file or listing a directory           |
+| Write      | w      | Allows modifying or deleting a file or adding/removing files in a directory |
+| Execute    | x      | Allows running a file as a program/script or accessing a directory     |
+
 # Network Discovery Tools
 
 ## Nuclei
