@@ -334,6 +334,38 @@ A SOC combines people, processes, and technology to monitor, detect, investigate
 
 ---
 
+## HIDS (Host Intrusion Detection System)
+
+**What:**  
+A security tool installed on an individual host or device (like a server or computer).
+
+**Purpose:**  
+Monitors and analyzes the internals of that host — its files, processes, system logs, and activities — to detect suspicious behavior or unauthorized changes.
+
+**Example:**  
+Detecting if a critical system file was changed unexpectedly, or if an unauthorized program starts running.
+
+---
+
+## NIDS (Network Intrusion Detection System)
+
+**What:**  
+A security tool placed within the network infrastructure (like on a router, switch, or dedicated device monitoring traffic).
+
+**Purpose:**  
+Monitors network traffic flowing across the network to detect suspicious patterns, attacks, or unauthorized access attempts targeting any devices on the network.
+
+**Example:**  
+Detecting a port scan, denial-of-service attack, or malware spreading through network packets.
+
+
+| Concept       | Meaning                       | Example                      |
+|---------------|-------------------------------|------------------------------|
+| Vulnerability | Weakness or flaw             | Outdated software             |
+| Threat        | Danger or attacker           | Hacker looking for targets    |
+| Risk          | Chance of harm from threat + vulnerability | Hacker exploits bug and steals data |
+
+
 # Sysmon (Windows) — Key Event IDs
 
 **Sysmon** (Microsoft Sysinternals) logs detailed system events to the Windows Event Log used by security teams.
