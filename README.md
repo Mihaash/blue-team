@@ -190,7 +190,64 @@ Key features:
 
 > Note: by default Nmap scans the top 1000 ports unless `-p-` is used for all ports.
 
-### NSE (Nmap Scripting Engine)
+# **Scanning Techniques (In Detail)**
+
+**1. TCP Connect Scan (Full Open Scan)**
+
+- Uses complete 3-way handshake
+- Easiest to detect by firewall  
+    Command: `nmap -sT IP`
+  **2. SYN Scan (Half-Open Scan)**
+
+- Sends SYN, receives SYN-ACK, does not complete handshake
+    
+- Stealthy  
+    Command: `nmap -sS IP`
+    
+
+**3. UDP Scan**
+
+- Identifies open UDP ports  
+    Command: `nmap -sU IP`
+    
+
+**4. FIN Scan**
+
+- Sends FIN packet; expects no response if open  
+    Command: `nmap -sF IP`
+    
+
+**5. Xmas Scan**
+
+- Sends packet with FIN+PSH+URG
+    
+- Stealth technique  
+    Command: `nmap -sX IP`
+    
+
+**6. Null Scan**
+
+- Sends packet with no TCP flags  
+    Command: `nmap -sN IP`
+    
+
+**7. Ping Sweep**
+
+- Identify live hosts  
+    Command: `nmap -sn 192.168.1.0/24`
+    
+
+**8. Version Detection**
+
+Detects version of service:  
+`nmap -sV IP`
+
+**9. OS Detection**
+
+Find operating system:  
+`nmap -O IP`
+
+NSE (Nmap Scripting Engine)
 
 Use categories like `vuln`, `auth`, `http-*`, `smb-*` for deeper scanning and automation.
 
